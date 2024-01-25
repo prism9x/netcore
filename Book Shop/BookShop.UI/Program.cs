@@ -11,8 +11,11 @@ namespace BookShop.UI
             // Add services to the container.
 
             builder.Services.RegisterDb(builder.Configuration);
+
             builder.Services.AddRazorPages();
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
