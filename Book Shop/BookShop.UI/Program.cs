@@ -1,3 +1,4 @@
+using BookShop.DataAccess;
 using BookShop.Infarstructure.Configuration;
 namespace BookShop.UI
 {
@@ -16,6 +17,10 @@ namespace BookShop.UI
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            // Auto migration
+            app.AutoMigration();
+            app.SeedData();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
