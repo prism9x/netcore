@@ -1,5 +1,4 @@
-using BookShop.DataAccess.Configuration;
-
+using BookShop.Infarstructure.Configuration;
 namespace BookShop.UI
 {
     public class Program
@@ -10,9 +9,7 @@ namespace BookShop.UI
 
             // Add services to the container.
 
-            builder.Services.RegisterDb(builder.Configuration);
-
-            builder.Services.AddRazorPages();
+            builder.Services.ConfigureIdentity(builder.Configuration);
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
