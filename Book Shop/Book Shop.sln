@@ -3,9 +3,60 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.UI", "BookShop.UI\BookShop.UI.csproj", "{1E830410-EF58-4536-96A6-09285DF770E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Infastructure", "BookShop.Infastructure\BookShop.Infastructure.csproj", "{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A30247BD-918C-4532-931B-FEE92F6F44A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infastructure", "Infastructure", "{9DE95623-EEDF-42E3-B684-31AFF40B6891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8CCCB1A9-9E02-42AE-BCB1-01B07625AAF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9CC9AE5F-4122-4496-9236-DF4A2AA1E3CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.DataAccess", "BookShop.DataAccess\BookShop.DataAccess.csproj", "{E3543282-B1D0-456C-AD59-47E3E6495A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Application", "BookShop.Application\BookShop.Application.csproj", "{2533512C-B76F-441A-95DD-CB525C0D3D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Domain", "BookShop.Domain\BookShop.Domain.csproj", "{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E830410-EF58-4536-96A6-09285DF770E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E830410-EF58-4536-96A6-09285DF770E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E830410-EF58-4536-96A6-09285DF770E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E830410-EF58-4536-96A6-09285DF770E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3543282-B1D0-456C-AD59-47E3E6495A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3543282-B1D0-456C-AD59-47E3E6495A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3543282-B1D0-456C-AD59-47E3E6495A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3543282-B1D0-456C-AD59-47E3E6495A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2533512C-B76F-441A-95DD-CB525C0D3D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2533512C-B76F-441A-95DD-CB525C0D3D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2533512C-B76F-441A-95DD-CB525C0D3D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2533512C-B76F-441A-95DD-CB525C0D3D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E830410-EF58-4536-96A6-09285DF770E2} = {A30247BD-918C-4532-931B-FEE92F6F44A9}
+		{FD9AB30D-0A05-45D2-90DF-43C038ECC1CB} = {9DE95623-EEDF-42E3-B684-31AFF40B6891}
+		{E3543282-B1D0-456C-AD59-47E3E6495A0B} = {9DE95623-EEDF-42E3-B684-31AFF40B6891}
+		{2533512C-B76F-441A-95DD-CB525C0D3D98} = {9CC9AE5F-4122-4496-9236-DF4A2AA1E3CB}
+		{E1C25DC7-C070-49B3-BC78-A9A4EFCDA6D8} = {8CCCB1A9-9E02-42AE-BCB1-01B07625AAF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14538273-9EDB-4356-B780-953A63B36967}
