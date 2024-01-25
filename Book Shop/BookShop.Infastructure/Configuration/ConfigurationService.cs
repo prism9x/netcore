@@ -1,4 +1,5 @@
 ﻿using BookShop.DataAccess.DataAccess;
+using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -24,7 +25,7 @@ namespace BookShop.Infarstructure.Configuration
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             // Add IdentityUser Service
-            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
         }
