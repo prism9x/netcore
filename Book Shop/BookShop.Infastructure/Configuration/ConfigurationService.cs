@@ -1,4 +1,6 @@
 ﻿using BookShop.DataAccess.DataAccess;
+using BookShop.DataAccess.Repository;
+using BookShop.Domain.Abstract;
 using BookShop.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,8 @@ namespace BookShop.Infarstructure.Configuration
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             // Add Service
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            //services.AddTransient<IAppUserRepository, AppUserRepository>();
 
 
             // Add RazorPage
