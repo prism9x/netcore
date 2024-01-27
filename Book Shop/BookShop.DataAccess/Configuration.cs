@@ -49,7 +49,13 @@ namespace BookShop.DataAccess
                     if (userExist == null)
                     {
                         // Create obj
-                        var user = new AppUser { UserName = "Admin", IsActive = true, AccessFailedCount = 0 };
+                        var user = new AppUser
+                        {
+                            UserName = "Admin",
+                            Email = "prism9x@gmail.com",
+                            IsActive = true,
+                            AccessFailedCount = 0
+                        };
 
                         // Create Db
                         var identityUser = await userManager.CreateAsync(
