@@ -1,4 +1,4 @@
-using BookShop.DataAccess;
+﻿using BookShop.DataAccess;
 using BookShop.Infarstructure.Configuration;
 namespace BookShop.UI
 {
@@ -15,6 +15,14 @@ namespace BookShop.UI
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddLogging(logging =>
+            {
+                // Bạn có thể cấu hình các nhà cung cấp log ở đây
+                logging.AddConsole();
+                logging.AddDebug();
+                // ... và các cấu hình khác
+            });
+
 
             var app = builder.Build();
 
