@@ -18,32 +18,39 @@ namespace BookShop.Infarstructure.Configuration
             var connectionString = config.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-            // Add Service
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IUserService, UserService>();
-
-            //services.ConfigureApplicationCookie(option =>
-            //{
-            //    option.Cookie.Name = "BookShopCookie";
-            //    option.ExpireTimeSpan = TimeSpan.FromDays(7);
-            //    option.LoginPath = "/admin/authencation/login";
-            //    option.AccessDeniedPath = "/admin/admin/home";
-            //});
-
-
-            //services.AddTransient<IAppUserRepository, AppUserRepository>();
-
-
+            // Add DbContext
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
             // Add RazorPage
             services.AddRazorPages();
 
-            // Add DbContext
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+            // Add Service
 
             // Add IdentityUser Service
-            services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.SignIn.RequireConfirmedEmail = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(option =>
+            {
+                option.Cookie.Name = "BookShopCookie";
+                option.ExpireTimeSpan = TimeSpan.FromHours(7);
+                option.LoginPath = "/Admin/Authentication/Login";
+
+                //option.AccessDeniedPath = "/";
+            });
+
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+
+
+
+
+
 
         }
     }
