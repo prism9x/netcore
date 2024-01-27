@@ -53,6 +53,7 @@ namespace BookShop.DataAccess
                         {
                             UserName = "Admin",
                             Email = "prism9x@gmail.com",
+                            EmailConfirmed = true,
                             IsActive = true,
                             AccessFailedCount = 0
                         };
