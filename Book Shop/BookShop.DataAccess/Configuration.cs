@@ -29,6 +29,7 @@ namespace BookShop.DataAccess
                 {
 
                     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
                     #region Role
                     // Role
 
