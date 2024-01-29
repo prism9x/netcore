@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.UI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize]
     public class HomeController : Controller
     {
-        [Area("Admin")]
-        [Authorize]
+
         public IActionResult Index()
         {
             return View();
