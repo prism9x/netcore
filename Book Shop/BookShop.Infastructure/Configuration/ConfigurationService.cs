@@ -28,19 +28,25 @@ namespace BookShop.Infarstructure.Configuration
             // Add IdentityUser Service
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
-                options.SignIn.RequireConfirmedAccount = true;
-                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedAccount = false;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(option =>
             {
-                option.Cookie.Name = "BookShopCookie";
-                option.ExpireTimeSpan = TimeSpan.FromHours(7);
+                option.Cookie.Name = "AdminCookie";
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(30);
                 option.LoginPath = "/Admin/Authentication/Login";
-
+                option.SlidingExpiration = true;
                 //option.AccessDeniedPath = "/";
+            });
+
+            services.Configure<IdentityOptions>(option =>
+            {
+                option.Lockout.AllowedForNewUsers = true;
+                option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                option.Lockout.MaxFailedAccessAttempts = 3;
             });
 
             services.AddTransient<IUserService, UserService>();
