@@ -52,25 +52,26 @@ namespace BookShop.Application.Services
             }
 
             // Successful
-            if (result.Succeeded)
+            if (!result.Succeeded)
             {
-                if (user.AccessFailedCount > 0)
-                {
-                    await _userManager.ResetAccessFailedCountAsync(user);
-
-                }
-
                 return new ResponseModel
                 {
-                    Status = true
+                    Status = false,
+                    Message = "Tài khoản hoặc mật khẩu không đúng !"
                 };
+            }
+
+            if (user.AccessFailedCount > 0)
+            {
+                await _userManager.ResetAccessFailedCountAsync(user);
+
             }
 
             return new ResponseModel
             {
-                Status = false,
-                Message = "Tài khoản hoặc mật khẩu không đúng !"
+                Status = true
             };
+
         }
     }
 }

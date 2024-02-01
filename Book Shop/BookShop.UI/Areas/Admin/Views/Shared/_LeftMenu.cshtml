@@ -1,5 +1,5 @@
 ﻿<div class="aside-top">
-    <a href="index.html" class="brand-wrap">
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="brand-wrap">
         <img src="~/admin/assets/imgs/theme/logo.svg" class="logo" alt="Evara Dashboard">
     </a>
     <div>
@@ -45,7 +45,7 @@
                 <span class="text">Tài khoản</span>
             </a>
             <div class="submenu">
-                <a href="page-account-login.html">User login</a>
+                <a asp-controller="Account" asp-action="Index">List User</a>
                 <a href="page-account-register.html">User registration</a>
                 <a href="page-error-404.html">Error 404</a>
             </div>
